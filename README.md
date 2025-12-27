@@ -42,7 +42,7 @@ A simple Java Swing-based drawing application that allows users to draw various 
 
 2. **Compile all Java files:**
    ```bash
-   javac *.java
+   javac finalProject/*.java
    ```
 
 3. **Run the application:**
