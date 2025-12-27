@@ -77,7 +77,7 @@ A simple Java Swing-based drawing application that allows users to draw various 
 ## Project Structure
 
 ```
-finalProject/
+Saad-Paint/
 ├── Main.java         # Entry point of the application
 ├── MyPanel.java      # Main panel with drawing canvas and UI controls
 ├── Shape.java        # Abstract base class for all shapes
