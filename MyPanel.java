@@ -117,18 +117,24 @@ public class MyPanel extends JPanel {
         this.add(eraserBtn);
 
         // Stroke Style Checkboxes
-        // solidCheckBox = new JCheckBox("Solid");
-        // solidCheckBox.setBounds(850, 10, 70, 30);
-        // solidCheckBox.setSelected(true);
-        // solidCheckBox.addActionListener(e -> {
-        //     if (solidCheckBox.isSelected()) {
-        //         filled = false;
-        //         dottedCheckBox.setSelected(false);
-        //         currentStroke = new BasicStroke(2);
-        //     }
-        // });
-        // this.add(solidCheckBox);
 
+        // Fill Checkbox (add this new checkbox)
+        fillCheckBox = new JCheckBox("Fill");
+        fillCheckBox.setBounds(850, 10, 70, 30);
+        fillCheckBox.setSelected(false);
+        fillCheckBox.addActionListener(e -> {
+            filled = fillCheckBox.isSelected();
+            if (fillCheckBox.isSelected()) {
+                dottedCheckBox.setSelected(false);
+            }
+            else {
+                currentStroke = new BasicStroke(2);
+                filled = false;
+            }
+        });
+        this.add(fillCheckBox);
+
+        // Dotted Checkbox
         dottedCheckBox = new JCheckBox("Dotted");
         dottedCheckBox.setBounds(930, 10, 80, 30);
         dottedCheckBox.addActionListener(e -> {
@@ -141,22 +147,6 @@ public class MyPanel extends JPanel {
         });
         this.add(dottedCheckBox);
 
-        // Fill Checkbox (add this new checkbox)
-        fillCheckBox = new JCheckBox("Fill");
-        fillCheckBox.setBounds(1020, 10, 60, 30);
-        fillCheckBox.setSelected(false);
-        fillCheckBox.addActionListener(e -> {
-            filled = fillCheckBox.isSelected();
-            if (fillCheckBox.isSelected()) {
-                dottedCheckBox.setSelected(false);
-                // solidCheckBox.setSelected(false);
-            }
-            else {
-                currentStroke = new BasicStroke(2);
-                filled = false;
-            }
-        });
-        this.add(fillCheckBox);
 
         // Colors Label (adjust position)
         JLabel colorsLabel = new JLabel("Colors:");
